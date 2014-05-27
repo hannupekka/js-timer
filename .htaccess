@@ -1,0 +1,2 @@
+RewriteEngine On    # Turn on the rewriting engine
+RewriteRule    ^([0-9]*[a-zA-Z]*)/?([a-zA-Z0-9\s]*)?$    index.php?time=$1&message=$2    [QSA]    # Handle product requests

@@ -1,0 +1,19 @@
+{
+  "name": "Timer",
+  "version": "0.0.1",
+  "description": "JS countdown timer",
+  "main": "Gruntfile.js",
+  "scripts": {},
+  "keywords": [
+    "js",
+    "timer"
+  ],
+  "author": "Hannu-Pekka Heinajarvi <hannupekka@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.9.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
