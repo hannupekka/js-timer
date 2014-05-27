@@ -22,7 +22,7 @@ if (typeof(time) != 'undefined') {
         // Get message
         var message = typeof(purl().param('message')) == 'undefined' ? purl().segment(3) : purl().param('message');
         if (typeof(message) == 'undefined')
-            message = 'Time is up!';
+            message = '';
 
         // Different time format if target is more than day away
         format = diff > 86400 ? 'j\\d H:i:s' : 'H:i:s';
@@ -52,6 +52,7 @@ if (typeof(time) != 'undefined') {
                 clearInterval(counter);
                 // Play alert sound and show alert
                 $.ionSound.play('bell_ring');
+                message = message.length == 0 ? 'Time is up!' : message;
                 alert(message);
             }
         }
