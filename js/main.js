@@ -21,8 +21,8 @@ if (typeof(time) != 'undefined') {
         diff--;
         // Get message
         var message = typeof(purl().param('message')) == 'undefined' ? purl().segment(3) : purl().param('message');
-        if (typeof('message') == 'undefined')
-            message = '';
+        if (typeof(message) == 'undefined')
+            message = 'Time is up!';
 
         // Different time format if target is more than day away
         format = diff > 86400 ? 'j\\d H:i:s' : 'H:i:s';
