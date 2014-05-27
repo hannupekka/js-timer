@@ -21,7 +21,7 @@ if (typeof(time) != 'undefined') {
         diff--;
         // Get message
         var message = typeof(purl().param('message')) == 'undefined' ? purl().segment(3) : purl().param('message');
-        if (typeof('message') != 'undefined')
+        if (typeof('message') == 'undefined')
             message = '';
 
         // Different time format if target is more than day away
