@@ -1,7 +1,7 @@
 // Init Ion.Sound
 $.ionSound({
     sounds: ["bell_ring"],
-    path: "sounds/",
+    path: "http://example.com/timer/sounds/",
     multiPlay: false,
     volume: "0.8"
 });
@@ -51,9 +51,9 @@ if (typeof(time) != 'undefined') {
                 time_container.hide();
                 clearInterval(counter);
                 // Play alert sound and show alert
+                // message = message.length == 0 ? 'Time is up!' : message;
                 $.ionSound.play('bell_ring');
-                message = message.length == 0 ? 'Time is up!' : message;
-                alert(message);
+                // alert(message);
             }
         }
 
