@@ -41,6 +41,7 @@ if (typeof(time) != 'undefined') {
                 current--;
                 // Decrease time by 1 second and update page
                 time_container.text(gmdate(format, current)).attr('data-seconds', current);
+                $('title').text(gmdate(format, current));
 
                 // Calculate current percent and update progress bar
                 var pct = (current / diff) * 100;
