@@ -1,7 +1,7 @@
 // Init Ion.Sound
 $.ionSound({
     sounds: ["bell_ring"],
-    path: "sounds/",
+    path: "http://example.com/timer/sounds/",
     multiPlay: false,
     volume: "0.8"
 });
@@ -21,7 +21,7 @@ if (typeof(time) != 'undefined') {
         diff--;
         // Get message
         var message = typeof(purl().param('message')) == 'undefined' ? purl().segment(3) : purl().param('message');
-        if (typeof('message') != 'undefined')
+        if (typeof(message) == 'undefined')
             message = '';
 
         // Different time format if target is more than day away
@@ -41,6 +41,7 @@ if (typeof(time) != 'undefined') {
                 current--;
                 // Decrease time by 1 second and update page
                 time_container.text(gmdate(format, current)).attr('data-seconds', current);
+                $('title').text(gmdate(format, current));
 
                 // Calculate current percent and update progress bar
                 var pct = (current / diff) * 100;
@@ -51,8 +52,9 @@ if (typeof(time) != 'undefined') {
                 time_container.hide();
                 clearInterval(counter);
                 // Play alert sound and show alert
+                // message = message.length == 0 ? 'Time is up!' : message;
                 $.ionSound.play('bell_ring');
-                alert(message);
+                // alert(message);
             }
         }
 
